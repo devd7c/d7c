@@ -84,7 +84,7 @@ class InteriorLanding extends Component{
         }
         return(
             <Fragment>
-                <Helmet pageTitle="Interior Design" />
+                <Helmet pageTitle="D7C" />
 
                 {/* Start Header Area  */}
                 <header className="header-area formobile-menu header--fixed default-color">
