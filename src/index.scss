@@ -1,9 +1,7 @@
-// 3rd-party Plugins
-@import "~highlight.js/styles/googlecode.css";
-@import "~perfect-scrollbar/css/perfect-scrollbar.css";
-
-// Theme Styles
-@import "./_metronic/_assets/sass/style.react.scss";
-
-// Theme D7C Styles
-@import "./_metronic/_assets/sass/custom/d7c.scss";
+// All Css Here
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "../public/assets/css/plugins.css";
+@import "../public/assets/scss/style";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import 'node_modules/react-modal-video/scss/modal-video.scss';
