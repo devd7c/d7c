@@ -2,7 +2,7 @@
   "name": "d7c",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://d7c-web.web.app",
+  "homepage": "https://d7c.info",
   "basename": "/",
   "dependencies": {
     "@babel/core": "7.4.3",
