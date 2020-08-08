@@ -17,7 +17,7 @@ class ContactThree extends Component{
         toast.configure()
         toast.info("Send email", {
             position: toast.POSITION.TOP_RIGHT,
-            autoClose: 2500,
+            autoClose: 2700,
             hideProgressBar: false,
             pauseOnHover: false
         });
@@ -26,7 +26,6 @@ class ContactThree extends Component{
             this.state
         )
         .then(res => {
-            this.resetForm()
             toast.success("Your mail has been sent successfully!", {
                 position: toast.POSITION.TOP_RIGHT,
                 hideProgressBar: true,
