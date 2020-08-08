@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Axios, db } from '../../firebase/firebaseConfig'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 class ContactThree extends Component{
     constructor(props){
@@ -17,6 +17,7 @@ class ContactThree extends Component{
         toast.configure()
         toast.info("Send email", {
             position: toast.POSITION.TOP_RIGHT,
+            autoClose: 2500,
             hideProgressBar: false,
             pauseOnHover: false
         });
@@ -31,12 +32,14 @@ class ContactThree extends Component{
                 hideProgressBar: true,
                 pauseOnHover: true
             });
-            /*db.collection('emails').add({
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
-            time: new Date(),
-            })*/
+            db.collection('emails').add({
+                name: this.state.name,
+                email: this.state.email,
+                subject: this.state.subject,
+                message: this.state.message,
+                time: new Date(),
+            })
+            this.resetForm()
         })
         .catch(error => {
             alert("Message failed to send.")
