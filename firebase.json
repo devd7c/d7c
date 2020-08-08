@@ -12,5 +12,9 @@
         "destination": "/index.html"
       }
     ]
+  },
+  "functions": {
+    "runtime": "nodejs8",
+    "source": "functions"
   }
 }
