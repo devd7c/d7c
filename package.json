@@ -2,7 +2,7 @@
   "name": "d7c",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://d7c.info",
+  "homepage": "https://d7c.us",
   "basename": "/",
   "dependencies": {
     "@babel/core": "7.4.3",
@@ -31,7 +31,7 @@
     "eslint-plugin-react": "7.12.4",
     "eslint-plugin-react-hooks": "^1.7.0",
     "file-loader": "3.0.1",
-    "firebase": "^7.17.2",
+    "firebase": "^9.14.0",
     "fs-extra": "7.0.1",
     "google-map-react": "^1.1.7",
     "html-webpack-plugin": "4.0.0-beta.5",
