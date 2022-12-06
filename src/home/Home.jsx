@@ -11,6 +11,7 @@ import CallActionOne from "../elements/callActions/CallActionOne";
 import CallActionTwo from "../elements/callActions/CallActionTwo";
 import ContactThree from "../elements/contact/ContactThree";
 import { Parallax } from "react-parallax";
+import TextLoop from "react-text-loop";
 
 import Helmet from "../component/common/Helmet";
 
@@ -35,9 +36,9 @@ const ServiceList = [
 
 const SlideList = [
     {
-        textPosition: 'text-right',
+        textPosition: 'text-center',
         category: '',
-        title: 'D7C',
+        title: '',
         description: '',
         buttonText: '> E N T E R_',
         buttonLink: '#service'
@@ -50,8 +51,6 @@ class InteriorLanding extends Component{
         this.menuTrigger = this.menuTrigger.bind(this);
         this.CLoseMenuTrigger = this.CLoseMenuTrigger.bind(this);
         this.stickyHeader = this.stickyHeader.bind(this);
-
-       //  this.subMenuTrigger = this.subMenuTrigger.bind(this);
         window.addEventListener('load', function() {
             console.log('All assets are loaded');
         })
@@ -65,7 +64,7 @@ class InteriorLanding extends Component{
     stickyHeader () {}
     render(){
         window.addEventListener('scroll', function() {
-            var value = window.scrollY;
+            let value = window.scrollY;
             if (value > 50) {
                 document.querySelector('.header--fixed').classList.add('sticky')
             }else{
@@ -73,7 +72,7 @@ class InteriorLanding extends Component{
             }
         });
 
-        var elements = document.querySelectorAll('.has-droupdown > a');
+        let elements = document.querySelectorAll('.has-droupdown > a');
         for(var i in elements) {
             if(elements.hasOwnProperty(i)) {
                 elements[i].onclick = function() {
@@ -85,15 +84,20 @@ class InteriorLanding extends Component{
         return(
             <Fragment>
                 <Helmet pageTitle="D7C" />
-
                 {/* Start Header Area  */}
                 <header className="header-area formobile-menu header--fixed default-color">
                     <div className="header-wrapper" id="header-wrapper">
-                        <div className="header-left">
-                            <div className="logo">
+                        <div className="header-left mt--15">
+                            <div className="inner">
                                 <a href="/">
-                                    <img className="logo-1" src="/assets/images/logo/logo-light.png" alt="Logo Images"/>
-                                    <img className="logo-2" src="/assets/images/logo/logo-all-dark.png" alt="Logo Images"/>
+                                    <TextLoop>
+                                        <h3 className="theme-gradient">D7C</h3>
+                                        <h3 className="theme-gradient">Design</h3>
+                                        <h3 className="theme-gradient">D7C</h3>
+                                        <h3 className="theme-gradient">Creativity</h3>
+                                        <h3 className="theme-gradient">D7C</h3>
+                                        <h3 className="theme-gradient">Development</h3>
+                                    </TextLoop>{" "}
                                 </a>
                             </div>
                         </div>
@@ -131,7 +135,7 @@ class InteriorLanding extends Component{
                             params={{ "particles": { "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 }, "image": { "src": "img/github.svg", "width": 100, "height": 100 } }, "opacity": { "value": 0.5, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false } }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } } }, "retina_detect": true }}
                         />
                     </div>
-                    <div className="bg_image bg_image--33">
+                    <div className="fullscreen d-flex align-items-center justify-content-center bg_image bg_image--33">
                         {SlideList.map((value , index) => (
                             <div className="slide slide-style-2 slider-paralax d-flex align-items-center justify-content-center" key={index}>
                                 <div className="container">
@@ -139,7 +143,7 @@ class InteriorLanding extends Component{
                                         <div className="col-lg-12">
                                             <div className={`inner ${value.textPosition}`}>
                                                 {value.category ? <span>{value.category}</span> : ''}
-                                                {value.title ? <h1 className="title theme-gradient">{value.title}</h1> : ''}
+                                                {value.title ? '' : <img className="logo-1" src="/assets/images/logo/logo-lg.png" alt="d7c logo xl"/>}
                                                 {value.description ? <p className="description">{value.description}</p> : ''}
                                                 {value.buttonText ? <div className="slide-btn"><a className="rn-button-style--2 btn-primary-color" href={`${value.buttonLink}`}>{value.buttonText}</a></div> : ''}
                                             </div>

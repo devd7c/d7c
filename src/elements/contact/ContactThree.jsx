@@ -25,7 +25,7 @@ class ContactThree extends Component{
             'https://us-central1-d7c-web.cloudfunctions.net/submit',
             this.state
         )
-        .then(res => {
+        .then(() => {
             toast.success("Your mail has been sent successfully!", {
                 position: toast.POSITION.TOP_RIGHT,
                 hideProgressBar: true,
