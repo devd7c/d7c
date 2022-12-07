@@ -15,7 +15,7 @@
   },
   "functions": [
     {
-      "runtime": "nodejs8",
+      "runtime": "nodejs16",
       "source": "functions",
       "codebase": "default",
       "ignore": [
