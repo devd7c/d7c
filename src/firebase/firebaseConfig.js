@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app'
 import 'firebase/auth'
 import 'firebase/database'
-import 'firebase/firestore';
+import 'firebase/compat/firestore';
 import Axios from 'axios'
 
 // Initialize Firebase

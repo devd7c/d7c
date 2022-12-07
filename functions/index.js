@@ -3,8 +3,8 @@ const nodemailer = require("nodemailer");
 const cors = require("cors")({
   origin: true,
 });
-const gmailEmail = functions.config().gmail.email;
-const gmailPassword = functions.config().gmail.password;
+const gmailEmail = "guido.terceros@gmail.com";
+const gmailPassword = "mrrudmwunxuzroyy";
 
 const mailTransport = nodemailer.createTransport({
   service: "gmail",
