@@ -38,6 +38,7 @@
     margin: 0 auto;
     box-shadow: 0 0 4px #ddd;
     transition: linear 100ms width;
+    z-index: 2;
   }
   .grecaptcha-badge:hover {
       width: 256px;
