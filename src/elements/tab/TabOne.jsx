@@ -9,7 +9,7 @@ class TabsOne extends Component{
         tab2 = "Our mission",
         tab3 = "Friendly Support";
         const { tabStyle } = this.props;
-        var namesItemOne = [
+        let namesItemOne = [
             'The Philosophy Of business analytics',
             'Fast-Track Your business',
             'Lies And Damn Lies About business',
