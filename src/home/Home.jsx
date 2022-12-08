@@ -11,7 +11,7 @@ import CallActionTwo from "../elements/callActions/CallActionTwo";
 import ContactThree from "../elements/contact/ContactThree";
 import { Parallax } from "react-parallax";
 import TextLoop from "react-text-loop";
-
+import { auth, signInWithGoogle } from '../firebase/firebaseConfig'
 import Helmet from "../component/common/Helmet";
 
 const image3 = "/assets/images/bg/parallax/bg-image-67.jpg";
@@ -32,7 +32,6 @@ const ServiceList = [
         description: 'Coming soon'
     },
 ]
-
 const SlideList = [
     {
         textPosition: 'text-center',
@@ -43,7 +42,6 @@ const SlideList = [
         buttonLink: '#service'
     }
 ]
-
 class InteriorLanding extends Component{
     constructor(props) {
         super(props);
@@ -62,6 +60,7 @@ class InteriorLanding extends Component{
     }
     stickyHeader () { console.log('Sticky Header loaded') }
     render(){
+        const { user } = this.props;
         window.addEventListener('scroll', function() {
             let value = window.scrollY;
             if (value > 50) {
@@ -109,6 +108,10 @@ class InteriorLanding extends Component{
                                     <li><a href="#contact">Contact</a></li>
                                 </Scrollspy>
                             </nav>
+                            {
+                                user ? <div className="header-btn"><a className="logout-btn" href="#logout" onClick={() => auth.signOut()}>logout</a></div> : 
+                                <div className="header-btn"><a className="login-btn" href="#login" onClick={signInWithGoogle}>login</a> </div>
+                            }
                             {/* Start Mobile Menu  */}
                             <div className="humberger-menu d-block d-lg-none pl--20">
                                 <span onClick={this.menuTrigger} className="menutrigger text-white"><FiMenu /></span>
@@ -162,9 +165,11 @@ class InteriorLanding extends Component{
                                         <div className="col-lg-12">
                                             <div className={`inner ${value.textPosition}`}>
                                                 {value.category ? <span>{value.category}</span> : ''}
-                                                {value.title ? '' : <img className="logo-1" src="/assets/images/logo/logo-lg.png" alt="d7c logo xl"/>}
+                                                {value.title ? '' : <img className={user ? 'logo-3'  : 'logo-1'} src={user?.photoURL || '/assets/images/logo/logo-lg.png'} alt={user?.displayName || 'logo d7c'}/>}
                                                 {value.description ? <p className="description">{value.description}</p> : ''}
-                                                {value.buttonText ? <div className="slide-btn"><a className="rn-button-style--2 btn-primary-color" href={`${value.buttonLink}`}>{value.buttonText}</a></div> : ''}
+                                                {value.buttonText ? <div className="slide-btn"><a className="rn-button-style--2 btn-primary-color" href={`${value.buttonLink}`}>{
+                                                    user ? 'Welcome ' + user.displayName + '!': value.buttonText
+                                                }</a></div> : ''}
                                             </div>
                                         </div>
                                     </div>

@@ -4,8 +4,11 @@ import { Axios, db } from '../../firebase/firebaseConfig'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { getAuth } from "firebase/auth";
 
 const ContactThree = () =>{
+    const auth = getAuth();
+    const user = auth.currentUser;
     const {executeRecaptcha} = useGoogleReCaptcha();
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -23,8 +26,10 @@ const ContactThree = () =>{
     }, [executeRecaptcha]);
 
     useEffect(() => {
+        setName(user?.displayName || '')
+        setEmail(user?.email || '')
         handleReCaptchaVerify();
-    }, [handleReCaptchaVerify]);
+    }, [handleReCaptchaVerify, user]);
 
     const handleSubmit = async (e) => {
         toast.configure();
