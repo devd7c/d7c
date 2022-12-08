@@ -16,7 +16,6 @@ class HeaderThree extends Component{
         this.CLoseMenuTrigger = this.CLoseMenuTrigger.bind(this);
         this.stickyHeader = this.stickyHeader.bind(this);
 
-       //  this.subMetuTrigger = this.subMetuTrigger.bind(this);
         window.addEventListener('load', function() {
             console.log('All assets are loaded');
         })
@@ -30,12 +29,12 @@ class HeaderThree extends Component{
         document.querySelector('.header-wrapper').classList.remove('menu-open')
     }
 
-    stickyHeader () {}
+    stickyHeader () {console.log('')}
 
     render(){
 
         window.addEventListener('scroll', function() {
-            var value = window.scrollY;
+            let value = window.scrollY;
             if (value > 100) {
                 document.querySelector('.header--fixed').classList.add('sticky')
             }else{
@@ -43,8 +42,8 @@ class HeaderThree extends Component{
             }
         });
 
-        var elements = document.querySelectorAll('.has-droupdown > a');
-        for(var i in elements) {
+        let elements = document.querySelectorAll('.has-droupdown > a');
+        for(let i in elements) {
             if(elements.hasOwnProperty(i)) {
                 elements[i].onclick = function() {
                     this.parentElement.querySelector('.submenu').classList.toggle("active");

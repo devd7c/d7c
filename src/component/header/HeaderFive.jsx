@@ -8,7 +8,6 @@ class HeaderFive extends Component{
         super(props);
         this.menuTrigger = this.menuTrigger.bind(this);
         this.CLoseMenuTrigger = this.CLoseMenuTrigger.bind(this);
-       //  this.subMetuTrigger = this.subMetuTrigger.bind(this);
         window.addEventListener('load', function() {
             console.log('All assets are loaded')
         })
@@ -20,8 +19,8 @@ class HeaderFive extends Component{
         document.querySelector('.header-wrapper').classList.remove('menu-open');
     }
     render(){
-        var elements = document.querySelectorAll('.has-droupdown > a');
-        for(var i in elements) {
+        let elements = document.querySelectorAll('.has-droupdown > a');
+        for(let i in elements) {
             if(elements.hasOwnProperty(i)) {
                 elements[i].onclick = function() {
                     this.parentElement.querySelector('.submenu').classList.toggle("active");

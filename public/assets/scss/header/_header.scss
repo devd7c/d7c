@@ -85,8 +85,65 @@
                     display: none;
                 }
             }
+            &.login-btn {
+                padding: 0 23px;
+                height: 40px;
+                display: inline-block;
+                line-height: 34px;
+                border: 2px solid $success-color;
+                border-radius: 4px;
+                font-size: 14px;
+                position: relative;
+                z-index: 2;
+                color: $white;
+                letter-spacing: 0.2px;
+                @extend %transition;
+                text-transform: uppercase;
+                background: $success-color;
+                &:hover {
+                    border: 2px solid $success-color;
+                    transform: translateY(-3px);
+                    color: #ffffff;
+                    background: $success-hover-color;
+                }
+                &.btn-white {
+                    border: 2px solid #ffffff;
+                    color: #ffffff;
+                    &:hover {
+                        border-color: $theme-color;
+                    }
+                }
+            }
+            &.logout-btn {
+                padding: 0 23px;
+                height: 40px;
+                display: inline-block;
+                line-height: 34px;
+                border: 2px solid $error-color;
+                border-radius: 4px;
+                font-size: 14px;
+                position: relative;
+                z-index: 2;
+                color: $white;
+                letter-spacing: 0.2px;
+                @extend %transition;
+                text-transform: uppercase;
+                background: $error-color;
+                &:hover {
+                    border: 2px solid $error-color;
+                    transform: translateY(-3px);
+                    color: #ffffff;
+                    background: $error-hover-color;
+                }
+                &.btn-white {
+                    border: 2px solid #ffffff;
+                    color: #ffffff;
+                    &:hover {
+                        border-color: $theme-color;
+                    }
+                }
+            }
         }
-
         .logo {
             a {
                 img {
@@ -246,6 +303,22 @@
                         &:hover {
                             color: #ffffff;
                             border-color: $theme-color;
+                        }
+                    }
+                    &.login-btn {
+                        color: $white;
+                        border-color: $success-color;
+                        &:hover {
+                            color: #ffffff;
+                            border-color: $success-color;
+                        }
+                    }
+                    &.logout-btn {
+                        color: $white;
+                        border-color: $error-color;
+                        &:hover {
+                            color: #ffffff;
+                            border-color: $error-color;
                         }
                     }
                 }
@@ -564,17 +637,6 @@
                         }
                         @media #{$sm-layout} {
                             width: auto;
-                        }
-                    }
-                }
-            }
-            .mainmenunav{
-                ul {
-                    &.mainmenu {
-                        li {
-                            a {
-
-                            }
                         }
                     }
                 }

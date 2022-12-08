@@ -250,6 +250,17 @@ Slider Default Style
                     }
                 }
             }
+            img {
+                &.logo-1 {
+                    transition: 0.9s;
+                }
+                &.logo-3 {
+                    transition: 0.5s;
+                    border-radius: 85px;
+                    transform: translate3d(0, -10px, 0);
+                    box-shadow: 0 50px 80px -10px rgba(0,0,0,0.17);
+                }
+            }
         }
 
         &.without-overlay{
@@ -824,6 +835,7 @@ Custom Animation
 
 .theme-gradient {
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
